@@ -1,0 +1,104 @@
+body {
+  box-sizing: border-box;
+  position: relative;
+
+  max-height: 100vh;
+
+  font-family: serif;
+  letter-spacing: 1px;
+  background-image: url(./img/hintergrund.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.container {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  bottom: 50%;
+
+  height: 95%;
+  width: 50%;
+
+  transform: translateY(-50%);
+}
+.titel {
+  display: inline-block;
+  border-bottom: 2px solid rgb(81, 171, 255);
+
+  text-transform: uppercase;
+}
+#reg-form {
+  min-width: 80%;
+  width: 80%;
+  padding: 0 20px 0 0;
+}
+.reg-form__container {
+  width: 100%;
+  padding: 10px 20px;
+
+  letter-spacing: 5px;
+}
+.reg-form__container:focus-within {
+  animation: Anim-reg-form__container 500ms ease-in-out infinite;
+}
+.reg-form__container:not(:last-child) {
+  margin-bottom: 10px;
+}
+.reg-form__container > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+.reg-form__legende {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+.reg-form__label {
+  font-size: 15px;
+  font-weight: 400;
+}
+.reg-form__umschlag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reg-form__input {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+
+  padding: 2px 2px;
+}
+#btn-registrieren {
+  height: 35px;
+  padding: 5px 10px;
+  border: none;
+
+  font-family: monospace;
+  letter-spacing: 2px;
+  background-color: rgb(81, 171, 255);
+  color: #fff;
+  cursor: pointer;
+
+  transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+#btn-registrieren:disabled {
+  background-color: #ccc;
+  color: #000;
+}
+#btn-registrieren:not(:disabled):hover,
+#btn-registrieren:not(:disabled):focus {
+  background-color: #fff;
+  color: black;
+}
+
+@keyframes Anim-reg-form__container {
+  0% {
+    border-color: rgb(155, 205, 252);
+  }
+  50% {
+    border-color: rgb(81, 171, 255);
+  }
+  100% {
+    border-color: rgb(155, 205, 252);
+  }
+}

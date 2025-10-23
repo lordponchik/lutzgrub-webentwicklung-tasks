@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="script.js" defer></script>
+    <title>Auto Regestrieren</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1 class="titel">Auto registrieren</h1>
+        <form id="reg-form">
+          <fieldset class="reg-form__container">
+            <legend class="reg-form__legende">Persönlichen Daten</legend>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="vorname">Vorname</label>
+              <input
+                class="reg-form__input"
+                type="text"
+                name="vorname"
+                id="vorname"
+              />
+            </div>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="nachname">Nachname</label>
+              <input
+                class="reg-form__input"
+                type="text"
+                name="nachname"
+                id="nachname"
+              />
+            </div>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="adresse">Adresse</label>
+              <input
+                class="reg-form__input"
+                type="text"
+                name="adresse"
+                id="adresse"
+              />
+            </div>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="geburtsdatum"
+                >Geburtsdatum</label
+              >
+              <input
+                class="reg-form__input"
+                type="date"
+                name="geburtsdatum"
+                id="geburtsdatum"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="reg-form__container">
+            <legend class="reg-form__legende">Daten zum Auto</legend>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="marke">Marke</label>
+              <input
+                class="reg-form__input"
+                type="text"
+                name="marke"
+                id="marke"
+              />
+            </div>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="modell">Modell</label>
+              <input
+                class="reg-form__input"
+                type="text"
+                name="modell"
+                id="modell"
+              />
+            </div>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="fahrgestellnummer"
+                >Fahrgestellnummer</label
+              >
+              <input
+                class="reg-form__input"
+                type="text"
+                name="fahrgestellnummer"
+                id="fahrgestellnummer"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="reg-form__container">
+            <legend class="reg-form__legende">Kennzeichen</legend>
+            <div class="reg-form__umschlag">
+              <label class="reg-form__label" for="kennzeichen"
+                >Gewünschtes Kennzeichen</label
+              >
+              <input
+                class="reg-form__input"
+                type="text"
+                name="kennzeichen"
+                id="kennzeichen"
+              />
+            </div>
+          </fieldset>
+
+          <button id="btn-registrieren" type="submit">Registrieren</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

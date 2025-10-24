@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>Memory-Spiel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <button class="menu__button">Neues Spiel</button>
+        <p>Gefunden:</p>
+        <p class="menu__info">
+          <span class="menu__punkte">0</span>
+          <span class="menu__erhoehung">+1</span>
+        </p>
+      </div>
+      <div id="spiel">
+        <div class="hero__start">
+          <img src="./img/hero.gif" alt="Kater tanzt" />
+        </div>
+        <div class="hero__sieg unaktiv">
+          <h1 class="hero__titel">Sieg!</h1>
+          <img src="./img/hero.gif" alt="Kater tanzt" />
+        </div>
+        <ul id="karten"></ul>
+      </div>
+    </div>
+  </body>
+</html>

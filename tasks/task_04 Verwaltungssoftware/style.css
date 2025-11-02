@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+body {
+  position: relative;
+}
+.hauptContainer {
+  height: 100vh;
+}
+.zentrierteContainer {
+  overflow: hidden;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  text-align: center;
+  background-color: rgb(71, 180, 144);
+}
+.container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+
+  text-align: center;
+  background-color: rgb(71, 180, 144);
+}
+h1 {
+  color: white;
+}
+li:not(:last-child) {
+  margin-bottom: 10px;
+}
+button {
+  padding: 5px 10px;
+
+  background-color: none;
+  cursor: pointer;
+}
+
+.form > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+.form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+label {
+  color: white;
+}
+input {
+  padding: 5px 10px;
+}
+.submitBtn {
+  padding: 5px 10px;
+}
+table {
+  border-spacing: 0;
+}
+th,
+td {
+  padding: 8px 10px;
+}
+thead tr {
+  color: white;
+  background-color: rgb(40, 116, 90);
+}
+tr {
+  background-color: white;
+}
+
+th {
+  border-bottom: 3px solid rgb(71, 180, 144);
+}
+th:not(:last-child) {
+  border-right: 3px solid rgb(71, 180, 144);
+}
+td {
+  border-bottom: 3px solid rgb(71, 180, 144);
+}
+tbody tr {
+  cursor: pointer;
+}
+.zuHauptMenuBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  transition: all 0.5 ease;
+}
+.zuHauptMenuBtn:hover {
+  color: white;
+}
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 999;
+
+  background-color: #808080c0;
+}
+.backdrop.isOpen {
+  display: block;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(71, 180, 144);
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: auto;
+  padding: 50px 20px;
+}
+.modal .zentrierteContainer {
+  height: auto;
+}
+.nachricht {
+  color: #fff;
+}
+tr.dragging {
+  opacity: 0.5;
+}

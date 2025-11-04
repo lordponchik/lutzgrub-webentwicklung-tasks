@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portal</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="folien">
+          <div class="folie anmelden">
+            <h1>Anmelden</h1>
+
+            <form id="anmeldenForm">
+              <div class="item">
+                <label for="login">Login</label>
+                <input type="text" id="login" required />
+              </div>
+              <div class="item">
+                <label for="passwort">Passwort</label>
+                <input type="password" id="passwort" required />
+              </div>
+              <button type="submit">Anmelden</button>
+            </form>
+
+            <p>
+              Haben Sie noch kein Konto?
+              <a href="#" class="link" data-target="registrieren"
+                >registrieren</a
+              >
+            </p>
+          </div>
+          <div class="folie registrieren hidden">
+            <h1>Registrieren</h1>
+
+            <form id="registrierenForm">
+              <div class="item">
+                <label for="reg-login">Login</label>
+                <input type="text" id="reg-login" required />
+              </div>
+              <div class="item">
+                <label for="reg-passwort">Passwort</label>
+                <input type="password" id="reg-passwort" required />
+              </div>
+              <button type="submit">Registrieren</button>
+            </form>
+            <p>
+              Haben Sie schon ein Konto?
+              <a href="#" class="link" data-target="anmelden">anmelden</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>

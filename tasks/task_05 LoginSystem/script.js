@@ -1,82 +1,15 @@
-import AktuellerUserSys from "./scripts/systemAktuellerUser.js";
+const express = require("express");
+const app = express();
+const path = require("path");
 
-const aktuellerUserSys = new AktuellerUserSys();
+const ACCOUNT_FILE = path.join(__dirname, "accounts.json");
 
-aktuellerUserSys.EntferneAktuellerUser();
+app.use(express.static("public"));
 
-let anmeldenFormEl = document.getElementById("anmeldenForm");
-let registrierenFormEl = document.getElementById("registrierenForm");
+const PORT = 3123;
 
-let folieEl = document.querySelectorAll(".folie");
-let linkEl = document.querySelectorAll(".link");
+app.use(express.static("public"));
 
-linkEl.forEach((el) =>
-  el.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const target = e.target.getAttribute("data-target");
-
-    folieEl.forEach((folie) => {
-      if (folie.classList.contains(target)) folie.classList.remove("hidden");
-      else folie.classList.add("hidden");
-    });
-  })
-);
-
-anmeldenFormEl.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let username = document.getElementById("login").value.trim();
-  let passwort = document.getElementById("passwort").value.trim();
-
-  let user = LadenUsers().find(
-    (u) => u.username === username && u.passwort === passwort
-  );
-
-  if (user) {
-    aktuellerUserSys.SpeichereAktuellerUser(user);
-    window.location.href = "userseite.html";
-  } else {
-    alert("Ungültiger Benutzername oder Passwort!");
-  }
+app.listen(PORT, () => {
+  console.log(`Server läuft auf http://localhost:${PORT}`);
 });
-
-registrierenFormEl.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let username = document.getElementById("reg-login").value.trim();
-  let passwort = document.getElementById("reg-passwort").value.trim();
-
-  let user = LadenUsers().find((u) => u.username === username);
-
-  if (user) {
-    alert("Benutzer mit diesem Login ist schon existiert");
-    return;
-  } else if (username.length < 5) {
-    alert("Username muss mindestens 5 Zeichen lang sein!");
-    return;
-  } else if (passwort.length < 6) {
-    alert("Passwort muss mindestens 5 Zeichen lang sein!");
-    return;
-  } else {
-    let users = LadenUsers();
-
-    users.push({
-      username,
-      passwort,
-    });
-
-    SpeicherUser(users);
-    aktuellerUserSys.SpeichereAktuellerUser(user);
-    window.location.href = "userseite.html";
-  }
-});
-
-function LadenUsers() {
-  let users = JSON.parse(localStorage.getItem("USERS")) || [];
-
-  return users;
-}
-function SpeicherUser(users) {
-  localStorage.setItem("USERS", JSON.stringify(users));
-}
